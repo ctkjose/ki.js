@@ -71,7 +71,7 @@ $('p:not(.note)');
 $('p:empty');
 ```
 
-[See a list of all CSS selectors](http://vogtjosh.com/selectors/)
+[See a list of all CSS selectors](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors)
 
 
 ### Events
@@ -107,6 +107,25 @@ $(function () {
     elem.textContent += i;
   });
 });
+```
+
+### .is()
+The `is("aselector")` returns true if the item matches the selector given.
+```html
+<div id="a" class="news"></div>
+```
+```javascript
+$("#id").is(".news");
+```
+
+### .extend()
+The `extend()` merges the contents of the objects passed into the first object. It returns the first object.
+```javascript
+var obj1 = {a:"1"};
+var obj2 = {b:"2"};
+var obj3 = {c:"3"};
+
+$.extend(obj1,obj2,obj3);
 ```
 
 ### Keep the chain!

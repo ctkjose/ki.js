@@ -6,11 +6,28 @@
   var $btn = $('button');
   var btn = document.getElementById('btn');
 
+ 
+  
   var clicked = 0;
   var onClick = function () {
     clicked++;
   };
 
+  
+  
+  
+  var obj1 = {a:"1"};
+  var obj2 = {b:"2"};
+  var obj3 = {c:"3"};
+  test('extend()', 1, function () {
+    ok($.extend(obj1,obj2,obj3).hasOwnProperty("c"));
+  });
+  
+  test('is()', 1, function () {
+    ok($btn.is(".j"));
+  });
+  
+  
   $btn.on('click', onClick);
 
   test('query the dom', 1, function () {

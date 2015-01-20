@@ -52,7 +52,31 @@
         c.removeEventListener(a, b)
       })
     },
-
+    /*
+     * is method
+     * s = a selector
+     * return true if matches selector
+     */
+    is: function( s ) {
+	  a = this[ 0 ];
+	  j = a && ( a.matches || a['webkitMatchesSelector'] || a['mozMatchesSelector'] || a['msMatchesSelector'] );
+	  return !!j && j.call( a, s );
+	},
+    /*
+     * extend method
+     * merge contents of two or more objects together into the first object
+     * a = the object to extend
+     * b = the this value for that function
+     */  
+    extend: function(a) {
+		var k = arguments;               
+		for( i = 1; i < k.length; i++ ) {
+          if ( l = k[ i ] ) {
+            for (j in l){a[j] = l[j]};
+          }
+		}
+		return a;
+	},
     /*
      * each method
      * use native forEach to iterate collection
